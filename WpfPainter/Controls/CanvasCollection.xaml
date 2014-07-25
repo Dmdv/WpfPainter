@@ -1,0 +1,20 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:extenders="clr-namespace:WpfPainter.Extenders"
+    xmlns:controls="clr-namespace:WpfPainter.Controls"
+    mc:Ignorable="d"
+    x:Class="WpfPainter.Controls.CanvasCollection"
+    x:Name="_userControl"
+    d:DesignWidth="413.6" d:DesignHeight="299">
+
+    <Grid x:Name="_layoutRootControl">
+        <Canvas
+            Grid.Column="0">
+            <controls:DrawingCanvas extenders:DragHelper.CanDrag="true" />
+            <controls:DrawingCanvas extenders:DragHelper.CanDrag="true" />
+        </Canvas>
+    </Grid>
+</UserControl>

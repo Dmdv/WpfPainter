@@ -1,0 +1,32 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dragDrop="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+    mc:Ignorable="d"
+    x:Class="WpfPainter.Controls.LayersControl"
+    x:Name="_userControl"
+    d:DesignWidth="640" d:DesignHeight="480"
+    DataContext="{Binding Source={StaticResource Locator}, Path=LayersViewModel}">
+
+    <ContentControl Template="{StaticResource RoundContentControlTemplate}" Opacity="0.7">
+        <Grid UseLayoutRounding="True">
+            <ListBox dragDrop:DragDrop.IsDragSource="True"
+                     dragDrop:DragDrop.IsDropTarget="True"
+                     dragDrop:DragDrop.DropHandler="{Binding}"
+                     ItemsSource="{Binding Path=Layers}"
+                     BorderBrush="SteelBlue"
+                     SelectedItem="{Binding Path=SelectedItem}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsVisible}" Margin="3" />
+                            <TextBlock Text="{Binding Name}" Margin="3" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </ContentControl>
+</UserControl>
