@@ -15,7 +15,6 @@ namespace WpfPainter.ViewModel
 			Layers = new ObservableCollection<LayerViewModel>();
 
 			AddNew();
-			AddNew();
 
 			ActiveBorderBrush = Brushes.Tomato;
 			InactiveBorderBrush = Brushes.SteelBlue;
